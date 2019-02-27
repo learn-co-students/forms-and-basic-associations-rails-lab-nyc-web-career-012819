@@ -47,7 +47,8 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title)
+    # byebug
+    params.require(:song).permit(:title, :artist_name, :genre_id, :note_contents => [])
+      # why :genre_id, not :genre_name??
   end
 end
-
